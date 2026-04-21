@@ -43,3 +43,15 @@ export interface Devolucion {
   fechaDevolucion: string;
   estadoLibro: 'bueno' | 'regular' | 'danado';
 }
+
+/** Lista de espera simulada cuando el libro está prestado */
+export interface ReservaEnCola {
+  id: string;
+  libroId: string;
+  libroTitulo: string;
+  usuarioId: string;
+  matricula: string;
+  nombre: string;
+  fechaReserva: string;
+  posicion: number;
+}

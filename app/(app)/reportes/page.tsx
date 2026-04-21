@@ -20,7 +20,7 @@ export default function ReportesPage(): React.ReactElement {
   const activosUsuario = prestamosUsuario.filter((p) => p.estado === 'activo').length;
 
   return (
-    <section className="space-y-4 rounded-xl bg-white p-6">
+    <section className="space-y-4 rounded-xl border border-guinda/10 bg-surface p-6 dark:border-dorado/15">
       <h1 className="text-2xl font-bold text-guinda">Reportes</h1>
       <div className="grid gap-3 md:grid-cols-3">
         <div className="rounded-lg bg-crema p-4"><p className="text-sm">Total de libros</p><p className="text-2xl font-bold text-guinda">{libros.length}</p></div>

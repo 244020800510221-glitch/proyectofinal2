@@ -58,18 +58,18 @@ export default function DevolucionesPage(): React.ReactElement {
   };
 
   return (
-    <section className="space-y-4 rounded-xl bg-white p-6">
+    <section className="space-y-4 rounded-xl border border-guinda/10 bg-surface p-6 dark:border-dorado/15">
       <h1 className="flex items-center gap-2 text-2xl font-bold text-guinda"><BookMarked className="h-6 w-6" /> Devoluciones</h1>
       <form onSubmit={handleSubmit(onSubmit)} className="grid gap-3">
-        <select className="rounded-lg border border-guinda/20 px-3 py-2" {...register('prestamoId')}>
+        <select className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" {...register('prestamoId')}>
           <option value="">Libro</option>
           {activos.map((p) => <option key={p.id} value={p.id}>{p.libroTitulo}</option>)}
         </select>
-        <input readOnly value={`Nombre: ${usuario?.nombre ?? ''}`} className="rounded-lg border border-guinda/20 px-3 py-2" />
-        <input readOnly value={`Matrícula: ${usuario?.matricula ?? ''}`} className="rounded-lg border border-guinda/20 px-3 py-2" />
-        <input readOnly value={`Grado y Grupo: ${usuario ? `${usuario.grado}${usuario.grupo}` : ''}`} className="rounded-lg border border-guinda/20 px-3 py-2" />
-        <input readOnly value={`Fecha de devolución: ${new Date().toLocaleDateString('es-MX')}`} className="rounded-lg border border-guinda/20 px-3 py-2" />
-        <select className="rounded-lg border border-guinda/20 px-3 py-2" {...register('estadoLibro')}>
+        <input readOnly value={`Nombre: ${usuario?.nombre ?? ''}`} className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" />
+        <input readOnly value={`Matrícula: ${usuario?.matricula ?? ''}`} className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" />
+        <input readOnly value={`Grado y Grupo: ${usuario ? `${usuario.grado}${usuario.grupo}` : ''}`} className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" />
+        <input readOnly value={`Fecha de devolución: ${new Date().toLocaleDateString('es-MX')}`} className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" />
+        <select className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" {...register('estadoLibro')}>
           <option value="">Estado del libro</option>
           <option value="bueno">Bueno</option>
           <option value="regular">Regular</option>

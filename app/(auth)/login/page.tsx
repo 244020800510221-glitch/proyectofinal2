@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { emailPattern, passwordPattern } from '@/lib/validations';
 import { useAuthStore } from '@/store/authStore';
+import { ThemeToggle } from '@/components/layout/ThemeToggle';
 import { BookOpen, Eye, EyeOff, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -43,7 +44,10 @@ export default function LoginPage(): React.ReactElement {
   };
 
   return (
-    <section className="mx-auto flex min-h-screen max-w-md flex-col justify-center bg-white p-6">
+    <section className="mx-auto flex min-h-screen max-w-md flex-col justify-center bg-surface p-6">
+      <div className="mb-4 flex justify-end">
+        <ThemeToggle />
+      </div>
       <div className="mb-8 text-center">
         <BookOpen className="mx-auto h-14 w-14 text-guinda" />
         <h1 className="text-4xl font-black text-guinda">CECYTECA</h1>

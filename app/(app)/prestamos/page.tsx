@@ -57,7 +57,7 @@ export default function PrestamosPage(): React.ReactElement {
   };
 
   return (
-    <section className="space-y-4 rounded-xl bg-white p-6">
+    <section className="space-y-4 rounded-xl border border-guinda/10 bg-surface p-6 dark:border-dorado/15">
       <h1 className="text-2xl font-bold text-guinda">Préstamos</h1>
       <h2 className="text-lg font-semibold">Historial</h2>
 
@@ -77,11 +77,11 @@ export default function PrestamosPage(): React.ReactElement {
       )}
 
       <div className="grid gap-2 md:grid-cols-2">
-        <input readOnly value={`Fecha de préstamo: ${fechaPrestamo}`} className="rounded-lg border border-guinda/20 px-3 py-2" />
-        <input readOnly value={`Fecha de entrega: ${fechaEntrega}`} className="rounded-lg border border-guinda/20 px-3 py-2" />
-        <input readOnly value={`Nombre: ${usuario?.nombre ?? ''}`} className="rounded-lg border border-guinda/20 px-3 py-2" />
-        <input readOnly value={`Matrícula: ${usuario?.matricula ?? ''}`} className="rounded-lg border border-guinda/20 px-3 py-2" />
-        <input readOnly value={`Grado y Grupo: ${usuario ? `${usuario.grado}${usuario.grupo}` : ''}`} className="rounded-lg border border-guinda/20 px-3 py-2" />
+        <input readOnly value={`Fecha de préstamo: ${fechaPrestamo}`} className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" />
+        <input readOnly value={`Fecha de entrega: ${fechaEntrega}`} className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" />
+        <input readOnly value={`Nombre: ${usuario?.nombre ?? ''}`} className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" />
+        <input readOnly value={`Matrícula: ${usuario?.matricula ?? ''}`} className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" />
+        <input readOnly value={`Grado y Grupo: ${usuario ? `${usuario.grado}${usuario.grupo}` : ''}`} className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" />
       </div>
 
       {message ? <AlertMessage type={message.type} message={message.text} /> : null}

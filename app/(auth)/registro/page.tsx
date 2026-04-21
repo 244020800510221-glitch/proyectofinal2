@@ -1,5 +1,6 @@
 'use client';
 
+import { ThemeToggle } from '@/components/layout/ThemeToggle';
 import { AlertMessage } from '@/components/ui/AlertMessage';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
@@ -46,17 +47,20 @@ export default function RegistroPage(): React.ReactElement {
 
   return (
     <section className="mx-auto max-w-2xl p-6">
+      <div className="mb-4 flex justify-end">
+        <ThemeToggle />
+      </div>
       <h1 className="mb-4 text-3xl font-bold text-guinda">Registro</h1>
       <form className="grid gap-4 rounded-xl bg-crema p-5" onSubmit={handleSubmit(onSubmit, () => setAlert({ type: 'warning', message: '⚠ No fue posible continuar ya que hay campos vacíos y los datos que puso son incorrectos. Por favor verifique sus datos' }))}>
         <Input placeholder="Nombre" error={errors.nombre?.message} {...register('nombre', { required: 'solo letras / no dejar en vacío', pattern: { value: nombrePattern, message: 'solo letras / no dejar en vacío' } })} />
         <Input placeholder="Matrícula" error={errors.matricula?.message} {...register('matricula', { required: 'solo debes de poner números / no dejar vacíos', pattern: { value: matriculaPattern, message: 'su matrícula no es válida, verifique que sean numéricos' } })} />
 
         <div className="grid grid-cols-2 gap-3">
-          <select className="rounded-lg border border-guinda/20 px-3 py-2" {...register('grado', { required: 'seleccione una opción' })}>
+          <select className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" {...register('grado', { required: 'seleccione una opción' })}>
             <option value="">Seleccione grado</option>
             {['1°', '2°', '3°', '4°', '5°', '6°'].map((g) => <option key={g}>{g}</option>)}
           </select>
-          <select className="rounded-lg border border-guinda/20 px-3 py-2" {...register('grupo', { required: 'por favor seleccione grado y grupo' })}>
+          <select className="rounded-lg border border-guinda/20 bg-surface px-3 py-2 text-texto dark:border-dorado/25" {...register('grupo', { required: 'por favor seleccione grado y grupo' })}>
             <option value="">Seleccione grupo</option>
             {['A', 'B', 'C', 'D', 'E'].map((g) => <option key={g}>{g}</option>)}
           </select>

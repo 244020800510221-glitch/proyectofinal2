@@ -33,7 +33,7 @@ export default function PerfilPage(): React.ReactElement {
   };
 
   return (
-    <section className="space-y-5 rounded-xl bg-white p-6">
+    <section className="space-y-5 rounded-xl border border-guinda/10 bg-surface p-6 dark:border-dorado/15">
       <h1 className="flex items-center gap-2 text-2xl font-bold text-guinda"><UserRound className="h-6 w-6" /> Perfil</h1>
 
       <div className="rounded-xl bg-crema p-4">

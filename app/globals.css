@@ -4,9 +4,22 @@
 
 :root {
   color-scheme: light;
+  --color-fondo: #f9f6f1;
+  --color-surface: #ffffff;
+  --color-crema: #f5f0e8;
+  --color-texto: #1a1a1a;
+  --color-border: rgba(123, 28, 46, 0.2);
+}
+
+.dark {
+  color-scheme: dark;
+  --color-fondo: #0f0b0d;
+  --color-surface: #1c1518;
+  --color-crema: #2a2226;
+  --color-texto: #f5f0e8;
+  --color-border: rgba(201, 168, 76, 0.25);
 }
 
 body {
-  @apply bg-fondo text-texto antialiased;
+  @apply bg-fondo text-texto antialiased transition-colors duration-200;
 }
-

@@ -12,7 +12,7 @@ const options = [
 
 export default function MenuPage(): React.ReactElement {
   return (
-    <section className="rounded-xl bg-white p-6">
+    <section className="rounded-xl border border-guinda/10 bg-surface p-6 dark:border-dorado/15">
       <h1 className="mb-6 text-center text-3xl font-bold text-guinda">Menú</h1>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
         {options.map(({ href, icon: Icon, label }) => (
