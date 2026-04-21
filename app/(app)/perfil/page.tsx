@@ -1,10 +1,12 @@
 'use client';
 
+import { SalidaButton } from '@/components/layout/SalidaButton';
 import { AlertMessage } from '@/components/ui/AlertMessage';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { useAuthStore } from '@/store/authStore';
 import { UserRound } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -15,6 +17,7 @@ interface BuscarUsuarioForm {
 }
 
 export default function PerfilPage(): React.ReactElement {
+  const router = useRouter();
   const usuario = useAuthStore((s) => s.usuarioActual);
   const usuarios = useAuthStore((s) => s.usuarios);
   const [alert, setAlert] = useState<{ type: 'error' | 'success' | 'warning'; message: string } | null>({ type: 'success', message: 'Datos procesados correctamente' });
@@ -51,6 +54,11 @@ export default function PerfilPage(): React.ReactElement {
       </form>
 
       {alert ? <AlertMessage type={alert.type} message={alert.message} /> : null}
+
+      <div className="flex flex-wrap gap-2">
+        <Button type="button" variant="ghost" onClick={() => router.push('/menu')}>ir al menú</Button>
+        <SalidaButton />
+      </div>
     </section>
   );
 }

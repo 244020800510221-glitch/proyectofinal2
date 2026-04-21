@@ -1,5 +1,6 @@
 'use client';
 
+import { SalidaButton } from '@/components/layout/SalidaButton';
 import { AlertMessage } from '@/components/ui/AlertMessage';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
@@ -88,6 +89,7 @@ export default function PrestamosPage(): React.ReactElement {
       <div className="flex flex-wrap gap-2">
         <Button onClick={requestLoan}>solicitar libro</Button>
         <Button variant="ghost" onClick={() => router.push('/menu')}>ir al menú</Button>
+        <SalidaButton />
         {!libro ? <Button variant="secondary">verificar</Button> : null}
       </div>
     </section>

@@ -1,5 +1,6 @@
 'use client';
 
+import { SalidaButton } from '@/components/layout/SalidaButton';
 import { AlertMessage } from '@/components/ui/AlertMessage';
 import { Button } from '@/components/ui/Button';
 import { Modal } from '@/components/ui/Modal';
@@ -66,6 +67,7 @@ export default function BuscarLibrosPage(): React.ReactElement {
         <Button variant="secondary" onClick={() => router.refresh()}>buscar otra vez</Button>
         {resultados.length > 0 ? <Button onClick={() => { const selected = resultados.find((l) => l.id === values.libroId); if (selected) { seleccionarLibro(selected); router.push('/prestamos'); } }}>ir a préstamos</Button> : null}
         <Button variant="ghost" onClick={() => setShowModal(true)}>regresar</Button>
+        <SalidaButton />
       </div>
 
       <Modal open={showModal} title="¿Quiere terminar su proceso?" onConfirm={() => router.push('/menu')} onCancel={() => setShowModal(false)}>

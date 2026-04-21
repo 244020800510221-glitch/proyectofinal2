@@ -1,11 +1,15 @@
 'use client';
 
+import { SalidaButton } from '@/components/layout/SalidaButton';
 import { Badge } from '@/components/ui/Badge';
+import { Button } from '@/components/ui/Button';
 import { useAuthStore } from '@/store/authStore';
 import { useLibroStore } from '@/store/libroStore';
 import { usePrestamoStore } from '@/store/prestamoStore';
+import { useRouter } from 'next/navigation';
 
 export default function ReportesPage(): React.ReactElement {
+  const router = useRouter();
   const libros = useLibroStore((s) => s.libros);
   const prestamos = usePrestamoStore((s) => s.prestamos);
   const usuario = useAuthStore((s) => s.usuarioActual);
@@ -47,6 +51,11 @@ export default function ReportesPage(): React.ReactElement {
             ))}
           </tbody>
         </table>
+      </div>
+
+      <div className="flex flex-wrap gap-2 pt-2">
+        <Button type="button" variant="ghost" onClick={() => router.push('/menu')}>ir al menú</Button>
+        <SalidaButton />
       </div>
     </section>
   );

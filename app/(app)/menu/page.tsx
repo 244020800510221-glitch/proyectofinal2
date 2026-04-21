@@ -1,3 +1,4 @@
+import { SalidaButton } from '@/components/layout/SalidaButton';
 import Link from 'next/link';
 import { BookOpenCheck, ClipboardCheck, Search, UserRound, BarChart3 } from 'lucide-react';
 
@@ -20,6 +21,9 @@ export default function MenuPage(): React.ReactElement {
             <p className="mt-2 text-sm font-semibold">{label}</p>
           </Link>
         ))}
+      </div>
+      <div className="mt-8 flex justify-center">
+        <SalidaButton />
       </div>
     </section>
   );

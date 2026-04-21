@@ -1,5 +1,6 @@
 'use client';
 
+import { SalidaButton } from '@/components/layout/SalidaButton';
 import { AlertMessage } from '@/components/ui/AlertMessage';
 import { Button } from '@/components/ui/Button';
 import { useAuthStore } from '@/store/authStore';
@@ -7,6 +8,7 @@ import { useLibroStore } from '@/store/libroStore';
 import { usePrestamoStore } from '@/store/prestamoStore';
 import { Devolucion } from '@/types';
 import { BookMarked } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import { useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -16,6 +18,7 @@ interface DevolucionForm {
 }
 
 export default function DevolucionesPage(): React.ReactElement {
+  const router = useRouter();
   const usuario = useAuthStore((s) => s.usuarioActual);
   const updateUsuario = useAuthStore((s) => s.updateUsuario);
   const prestamos = usePrestamoStore((s) => s.prestamos);
@@ -76,6 +79,11 @@ export default function DevolucionesPage(): React.ReactElement {
       </form>
       {alert ? <AlertMessage type={alert.type} message={alert.message} /> : null}
       {watch('prestamoId') ? <AlertMessage type="success" message="Campos listos para devolución" /> : null}
+
+      <div className="flex flex-wrap gap-2 pt-2">
+        <Button type="button" variant="ghost" onClick={() => router.push('/menu')}>ir al menú</Button>
+        <SalidaButton />
+      </div>
     </section>
   );
 }
